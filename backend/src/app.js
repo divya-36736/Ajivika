@@ -10,13 +10,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173", 
-    "http://localhost:5174", 
-    "https://ajivika.vercel.app",
-    "https://ajivika-git-main-divya-36736s-projects.vercel.app",
-    "https://ajivika-842exboib-divya-36736s-projects.vercel.app"
-  ],
+  origin: function (origin, callback) {
+    // Agar request localhost se ya vercel.app se aa rahi hai, toh allow kar do
+    if (!origin || origin.includes('localhost') || origin.includes('vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
  
