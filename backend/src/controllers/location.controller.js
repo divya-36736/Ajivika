@@ -53,5 +53,5 @@ const getAllLocations = async (req, res) => {
     }
 };
 
-// Ise export karna na bhulein
+
 module.exports = { createJobPost, getAllLocations };

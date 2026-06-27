@@ -4,14 +4,12 @@ const cors = require("cors");
 const authRoutes = require('./routes/auth.routes')
 
 const app = express();
-// 2. Body Parser Middleware
+// 2. Body Parser Middlewares
 app.use(express.json());
-// 3. Cookie Parser Middleware (You imported it, but forgot this line!)
 app.use(cookieParser());
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Agar request localhost se ya vercel.app se aa rahi hai, toh allow kar do
     if (!origin || origin.includes('localhost') || origin.includes('vercel.app')) {
       callback(null, true);
     } else {

@@ -1,36 +1,3 @@
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import React, { useState } from "react";
-// import { auth, db } from "../firebase.config";
-// import { setDoc, doc } from "firebase/firestore";
-// import { toast, Toaster } from "react-hot-toast";
-
-// function Register() {
-//   const [hiringLocation, setHiringLocation] = useState("");
-//   const [name, setName] = useState("");
-//   const [uid, setUid] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleRegister = async (e) => {
-//     e.preventDefault();
-//     try {
-//       await createUserWithEmailAndPassword(auth, email, password);
-//       const user = auth.currentUser;
-//       if (user) {
-//         await setDoc(doc(db, "hirer", user.uid), {
-//           email: user.email,
-//           hiringLocation: hiringLocation,
-//           name: name,
-//           uid: uid,
-//         });
-//       }
-//       toast.success("User Registered Successfully!!");
-//     } catch (error) {
-//       toast.error(error.message);
-//     }
-//   };
-
-
 import React, { useState } from "react";
 import API from "../api/axios"; // Naya Axios import
 import { toast, Toaster } from "react-hot-toast";

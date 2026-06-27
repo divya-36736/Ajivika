@@ -1,24 +1,3 @@
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import React, { useState } from "react";
-// import { auth } from "../firebase.config";
-// import { toast, Toaster } from "react-hot-toast";
-
-// function Login() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       await signInWithEmailAndPassword(auth, email, password);
-//       window.location.href = "/admin";
-//       toast.success("User logged in Successfully");
-//     } catch (error) {
-//       toast.error(error.message);
-//     }
-//   };
-
-
 import React, { useState } from "react";
 import API from "../api/axios";
 import { toast, Toaster } from "react-hot-toast";
